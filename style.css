@@ -1,0 +1,44 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0a0a0c;--card:rgba(0,0,0,.5);--ink:#f5f3ee;--mut:#c9c5bb;--line:rgba(255,255,255,.28);--acc:#f0d68a;--ok:#4ade80;--bad:#fb7185;--warn:#fbbf24;color-scheme:dark}
+:root[data-theme="light"]{--bg:#0a0a0c}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:url(moon.jpg) 28% 0/cover no-repeat;filter:grayscale(1) contrast(1.15) brightness(1.05)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(10,10,12,0) 0%,rgba(10,10,12,.15) 22%,rgba(10,10,12,.78) 55%,rgba(10,10,12,.9) 100%)}
+body{text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 14px rgba(0,0,0,.8);margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 "Manrope","Segoe UI",system-ui,-apple-system,sans-serif;letter-spacing:.15px}
+main{max-width:680px;margin:0 auto;padding:200px 16px 40px}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:3rem;letter-spacing:.5px;color:var(--acc);line-height:1.2;margin:0 0 4px}
+.sub{color:var(--ink);opacity:.9;font-size:1.05rem;margin:0 0 22px}
+label{display:block;font-weight:700;margin:16px 0 6px}
+textarea{backdrop-filter:blur(6px);text-shadow:none;width:100%;min-height:170px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit;resize:vertical}
+textarea.jd{min-height:90px}
+textarea:focus,button:focus-visible{outline:3px solid var(--acc);outline-offset:1px}
+button{margin-top:16px;width:100%;padding:14px;border:0;border-radius:8px;background:var(--acc);color:#1a1608;font:inherit;font-weight:700;cursor:pointer}
+#out{margin-top:28px}
+.score{display:flex;align-items:baseline;gap:8px}
+.num{font-family:"Cormorant Garamond",Georgia,serif;font-size:5.5rem;font-weight:700;color:var(--acc);line-height:1}
+.of{color:var(--mut)}
+.meter{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin:12px 0 4px}
+.meter i{height:12px;border-radius:2px;background:var(--line)}
+.meter i.on{background:var(--acc)}
+.verdict{font-weight:600;margin:6px 0 20px}
+ul{list-style:none;padding:0;margin:0}
+li{padding:6px 0;margin-bottom:4px;display:flex;gap:10px}
+li b{flex:none;width:1.4em;text-align:center}
+li.p b{color:var(--ok)}li.f b{color:var(--bad)}
+li small{display:block;color:var(--mut)}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:1.6rem;letter-spacing:.3px;color:var(--acc);margin:28px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{border:1px solid var(--line);background:var(--card);padding:3px 10px;border-radius:99px;font-size:.9rem}
+.chips .miss{border-color:var(--bad);color:var(--bad)}
+.chips .hit{border-color:var(--ok);color:var(--ok)}
+section.info{margin-top:36px}
+section.info p{margin:0 0 12px}
+.info h2{font-size:1.9rem;margin:36px 0 10px}
+.steps{counter-reset:s}
+.steps li{display:block;counter-increment:s}
+.steps li::before{content:"Step " counter(s) ". ";font-weight:700;color:var(--acc)}
+details{padding:6px 0;margin-bottom:4px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 0;color:var(--mut)}
+.note{color:var(--mut);font-size:.85rem;margin-top:24px}
