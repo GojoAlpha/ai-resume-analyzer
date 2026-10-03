@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Resume Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>AI Resume Analyzer</h1>
+<p class="sub">Paste your resume text to get an ATS-style score, a checklist of what to fix, and a keyword match against any job posting. Everything runs inside your browser, so your resume is never uploaded or stored anywhere.</p>
+<label for="r">Resume text</label>
+<textarea id="r" placeholder="Paste your full resume here"></textarea>
+<label for="j">Job description (optional)</label>
+<textarea id="j" class="jd" placeholder="Paste the job posting to see missing keywords"></textarea>
+<button id="go" type="button">Analyze resume</button>
+<section id="out" aria-live="polite" hidden></section>
+<section class="info">
+<h2>How it works</h2>
+<p>Most companies use an Applicant Tracking System (ATS) to filter resumes before a human reads them. These systems look for clear section headings, contact details, relevant keywords and readable formatting. This tool runs the same kind of checks, so you can find and fix weak spots early.</p>
+<ul class="steps">
+<li>Paste the full text of your resume into the first box. Plain text works best.</li>
+<li>Optionally paste the job description for the role you want. The tool pulls out the most repeated keywords.</li>
+<li>Tap Analyze resume. You get a score out of 100, a pass or fail list, and the keywords your resume is missing.</li>
+<li>Edit your resume, paste it again and watch the score improve.</li>
+</ul>
+<h2>What the score measures</h2>
+<p>The score is built from ten checks: email, phone number, and Experience, Education, Skills and Projects sections, plus resume length, action verbs, measurable results, and a LinkedIn or GitHub link. Length, verbs and measurable results carry the most weight because they separate average resumes from strong ones.</p>
+<h2>Tips for an ATS-friendly resume</h2>
+<ul>
+<li><div>Use standard headings such as Experience, Education, Skills and Projects. Creative headings confuse parsers.<small>Stick to one column and avoid tables, text boxes and icons.</small></div></li>
+<li><div>Mirror the job description honestly. If the posting says "React" and you know React, write "React", not just "frontend frameworks".<small>Only add keywords for skills you actually have.</small></div></li>
+<li><div>Start every bullet with a strong verb and end it with a result.<small>Example: "Built a billing dashboard that cut report time by 40%."</small></div></li>
+<li><div>Keep it to one page if you have under five years of experience.<small>Recruiters spend only a few seconds on a first scan.</small></div></li>
+<li><div>Link to real work. A GitHub profile with a few finished projects proves more than a long skills list.</div></li>
+</ul>
+<h2>Common mistakes</h2>
+<ul>
+<li><div>Keyword stuffing<small>Repeating a word ten times hurts you once a human reads it.</small></div></li>
+<li><div>Vague bullets<small>"Responsible for testing" says nothing. Say what you tested and what improved.</small></div></li>
+<li><div>Saving as an image or a scanned PDF<small>ATS software cannot read text inside images. Export a text-based PDF or DOCX.</small></div></li>
+</ul>
+<h2>Frequently asked questions</h2>
+<details><summary>Is my resume stored anywhere?</summary><p>No. The analysis happens in your browser and nothing is sent to a server.</p></details>
+<details><summary>Does a high score guarantee interviews?</summary><p>No. Real ATS products differ from each other, and recruiters also judge experience, projects and fit. Treat the score as a checklist, not a verdict.</p></details>
+<details><summary>Why can't I upload a PDF?</summary><p>This first version reads pasted text only. PDF and DOCX upload with AI-written feedback is planned for the next release.</p></details>
+<details><summary>What is a good score?</summary><p>Above 80 means the basics are strong. Between 55 and 80, fix the red items first. Below 55, add the missing sections and quantify your results.</p></details>
+</section>
+<p class="note">Scores come from rule-based checks, not a hiring system. Use them as a checklist.</p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
